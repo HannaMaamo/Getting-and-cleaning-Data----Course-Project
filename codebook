@@ -1,19 +1,35 @@
 CodeBook
 
-Descriptions of my variables, the data, and work that was performed to clean up the data.
+Just a little background information of the data, the variables, and the work that was performed to clean up the data.
 
 The data source
 
     - Given data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
     - Given description of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
     - Data Set Information
+    
+There are a total of 5 Sections:
 
+    1. Merges the training and the test sets to create one data set.
+    2. Extracts only the measurements on the mean and standard deviation for each measurement.
+    3. Uses descriptive activity names to name the activities in the data set
+    4. Appropriately labels the data set with descriptive activity names.
+    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+    
+
+How the run_analysis.R implements the 5 sections:
+
+    - It loads both the test and the train data
+    - It load the features and activity labels.
+    - It extracts both the mean and standard deviation column names and data.
+    - It processes the data. It is a two part process that runs the test and the train data respectively.
+    - Lastly, it merges thedata sets.
 
 The data
 
 The dataset includes the following files:
 
-'README.txt'
+'README.txt' 
 
 'activity_labels.txt': Links the class labels with their activity name.
 
@@ -25,7 +41,7 @@ The dataset includes the following files:
 
 'test/yTest': Test labels.
 
-The following files are available for the train and test data. Their descriptions are equivalent.
+The following files are available for the train and test data.
 
 'train/subjectTrain.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
@@ -37,19 +53,6 @@ The following files are available for the train and test data. Their description
 
 Transformation details
 
-There are 5 parts:
 
-    1. Merges the training and the test sets to create one data set.
-    2. Extracts only the measurements on the mean and standard deviation for each measurement.
-    3. Uses descriptive activity names to name the activities in the data set
-    4. Appropriately labels the data set with descriptive activity names.
-    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-    
 
-How run_analysis.R implements the above steps:
 
-Load both test and train data
-Load the features and activity labels.
-Extract the mean and standard deviation column names and data.
-Process the data. There are two parts processing test and train data respectively.
-Merges data sets.
